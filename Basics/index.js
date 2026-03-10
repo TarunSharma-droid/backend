@@ -3,18 +3,20 @@
 require("dotenv").config(); // to use .env file // load variables from .env file
 
 
-import express from "express"
+import express from "express" // importing express  to make a server
 // We can also use another syntex --> const express = require('express')
 
 const app = express() // express() creates an Express app --> This app will act as your server
 
 const port = 3000
 app.listen(3000)   // It means the server will run on port 3000 and listen for incoming requests from the client (browser).
-// We open the server in the browser using http://localhost:3000
+// We access the server created above from the browser (client) using http://localhost:3000
 
-app.get('/', (req, res) => { // get is a request . here made on the home route by client (browser) --> using http://localhost:3000/
+app.get('/', (req, res) => {  
   res.send('Hello World!')
 })
+// It means when the browser accesses the server's home route (/) using http://localhost:3000/,
+// it sends a GET request to the server, and the server responds with "Hello World!".
 
 app.get('/twitter',(req,res) =>{  // get is a request . here made on the twitter route
     res.send('twitter is opened')
