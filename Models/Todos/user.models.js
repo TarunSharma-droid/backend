@@ -32,5 +32,6 @@ const userSchema = new mongoose.Schema( // defining the schema
 
 export const User = mongoose.model("User",userSchema) // making model and connecting the model with databse
 // User is the name model and it is based on the schema useerSchema
-// Note the name od the model is User but in the database it is stored as Users.. it is basic practise of mongoDB.
-// that means the name becomes plural by its own.
+// Note the name of the model is User but in the database it is stored as Users.. it is basic practise of mongoDB.
+// that means the name becomes plural by its own. But in case we take the name as plural by default then while saving in
+// the database it does not becomes { i.e Users agage namm hai to vo Users he rahega , Userss nhi hoga }
