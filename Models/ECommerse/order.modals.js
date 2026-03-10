@@ -13,7 +13,7 @@ const orderItemsSchema = new mongoose.Schema(
             required : true,
         }
     }
-)
+) // it is known as "Embedded Subdocuments" as it is secondary model.
 
 const orderSchema = new mongoose.Schema(
 
