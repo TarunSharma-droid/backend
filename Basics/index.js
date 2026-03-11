@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 // It means when the browser accesses the server's home route (/) using http://localhost:3000/,
 // it sends a GET request to the server, and the server responds with "Hello World!".
 
-app.get('/twitter',(req,res) =>{  // get is a request . here made on the twitter route
+app.get('/twitter',(req,res) =>{  // get is a request . here made on the twitter route of the server using http://localhost:3000/twitter
     res.send('twitter is opened')
 })
 app.get ('/login', (req,res) =>{

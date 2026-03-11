@@ -15,6 +15,23 @@
 // to talk to the server and send data back to the server.
 
 
-// Express takes the "request" from the client and give it to server ( backend) and 
-// brings back the "response" to client side.
-// That means Express handels the request and response.
+// Express receives the "request" from the client and give it to server (process it on server : backend)
+// and brings back the "response" to client side.
+// That means Express handels the HTTP request and response.
+
+//    Actually Express se hi API banayi jati hai.
+--->  API ek address hai jahan request bheji jati hai.
+--->  Express API ko implement karta hai.
+
+//          app.get("/users", (req, res) => {
+//             const users = ["Tarun", "Rahul", "Aman"];
+//             res.json(users);
+//             });
+
+    Express → request handle kar raha hai
+
+    /users      API endpoint hai
+    pp.get()	Express route
+    req	        client request
+    res        	server response
+    
