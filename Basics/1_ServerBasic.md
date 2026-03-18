@@ -1,4 +1,3 @@
-
 // SERVER → It is a computer, machine, or program on which a client makes a request, and the server sends
 // a response according to that request. A server is usually connected to a database where it searches or stores data.
 
@@ -10,14 +9,29 @@
 //                        ↓ response
 //                  Client gets the data
 
-// Express is a package which is use to make server () 
-// and to establish connection between the client side and the server. It helps your product 
-// to talk to the server and send data back to the server.
 
 
-// Express receives the "request" from the client and give it to server (process it on server : backend)
-// and brings back the "response" to client side.
-// That means Express handels the HTTP request and response.
+
+// Node.js provides the server environment and creates the HTTP server.
+// Express is a framework built on top of Node.js that helps manage the server easily.
+// We manage server by creating an Express app using --> const app = express().
+
+// The Express app is responsible for handling HTTP requests and responses.
+// It receives HTTP requests from the client (browser/app),
+// processes them using backend logic running on the Node.js server,
+// and sends the appropriate HTTP response back to the client.
+
+// If we do not create an Express application ---> (const app = express()),
+// then Express cannot handle requests and responses because there is
+// no application instance to manage routes and server behavior.
+
+// In simple terms:
+// Node.js → creates and runs the server environment
+// Express → manages requests, routes, and responses on that server using the app object
+// This allows the client and server to communicate and exchange data.
+
+
+
 
 //    Actually Express se hi API banayi jati hai.
 --->  API ek address hai jahan request bheji jati hai.

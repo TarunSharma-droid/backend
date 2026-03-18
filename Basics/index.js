@@ -1,47 +1,31 @@
-// Building a Node.js HTTP server using Express. --> Node.js HTTP Server
+import dotenv from "dotenv"; 
+dotenv.config(); // to use the environment variables from .env file we have to import the dotenv package and call the config() method on it.
 
-require("dotenv").config(); // to use .env file // load variables from .env file
+import express from "express"; // Frstly we have to import the express in our project to handel HTTP request and responces.
+// to use this syntax change "type" : commonjs to "type" : module in package.json file.
+
+const app = express(); // creates an Express application --> This app is responsible for handling HTTP requests and responses.
+// ye ek machine hai jo requests handle karegi aur responses bhejegi.
 
 
-import express from "express" // importing express  to make a server
-// We can also use another syntex --> const express = require('express')
-
-const app = express() // express() creates an Express app --> This app will act as your server
-
-const port = 3000
-app.listen(3000)   // It means the server will run on port 3000 and listen for incoming requests from the client (browser).
-// We access the server created above from the browser (client) using http://localhost:3000
-
-app.get('/', (req, res) => {  
-  res.send('Hello World!')
+app.get("/", (req, res) => {  // get request is made on the home route of theserver ( which will be maintain by Express app )
+  res.send("Hello World !! This is the home route of the server");
+});
+app.get('/about',(req,res) => {  // get request is made on the about route of the server 
+    res.send('about is opened')
 })
-// It means when the browser accesses the server's home route (/) using http://localhost:3000/,
-// it sends a GET request to the server, and the server responds with "Hello World!".
-
-app.get('/twitter',(req,res) =>{  // get is a request . here made on the twitter route of the server using http://localhost:3000/twitter
-    res.send('twitter is opened')
-})
-app.get ('/login', (req,res) =>{
-    res.send('<h1>please consult Mr.Tarun for all your problems</h1> ')
+app.get('/login', (req,res) =>{  // get request is made on the login route of the server.
+    res.send('enter your login details')
 })
 
-app.get ('/tarun', (req,res) =>{
-    res.send('<h2>Your one stop solution for all your utilities and accomodation needs </h2> ')
-})
+// NOTE : app.get se request execute nahi hoti sirf register hoti hai jese ki agar future me koi "/"" route pe GET request aaye, to ye function chalana"
+// But if we want to initiate the request we have to use --> example http://localhost:3000/about or http://localhost:3000/login in the browser.
+// This will initiate the request using the browser (client).
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
 
-app.listen(process.env.PORT, () => {
-  console.log(`Hello love you ${port}`) // It is still getting the value of port from the same file only i.e 3000
-})
-// Use this if you want to imoprt the value of port from the .env file
-
-// const port = process.env.PORT
-// app.listen(port, () => {
-//   console.log(`Hello love you ${port}`) 
-// })
-
-// now this is completely ready for the deployment
-// hello
+const PORT = process.env.PORT;
+app.listen(PORT, () => { // to get the port number from .env file .
+  console.log(`Server is running on the port ${PORT}`);
+});
+// app.listen() --> Node ko bolta hai "port 3000 pe server start karo"
+// Ab server real me chalu hota hai aur wo requests sunne lagta hai.
